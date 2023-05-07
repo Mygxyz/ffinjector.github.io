@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<style>
+  body{
+    background-color: black;
+  }
+  #d{
+    width: 99%;
+    height: 279px;
+    border: 1px solid rgb(0, 128, 0);
+    color: white;
+    
+  }
+
+
+#ah {
+  background-color: transparent;
+  color: #00FFFF;
+  border: none;
+  font-family: monospace;
+  font-size: 1em;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  left: 1%;
+  text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;
+  padding-bottom: 10px;
+}
+
+#op {
+  position: relative;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-style {
+  position: relative;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #111;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#op:checked ~ .checkbox-style {
+  background-color: #00FF00;
+  box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
+}
+
+
+
+button {
+  background-color: transparent;
+  border: none;
+  font-family: monospace;
+  font-size: 1em;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  left: 1%;
+  text-shadow: 0 0 5px, 0 0 10px, 0 0 15px;
+}
+
+#ah {
+  color: #00FFFF;
+  text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;
+}
+
+#aimbot {
+  color: #FF0000;
+  text-shadow: 0 0 5px #FF0000, 0 0 10px #FF0000, 0 0 15px #FF0000;
+  padding-bottom: 9px;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-style {
+  position: relative;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #111;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+input[type="checkbox"]:checked ~ .checkbox-style {
+  background-color: #00FF00;
+  box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
+}
+#ab{
+  position: relative;
+  margin-left: 59px;
+}
+#neonYellow,#neonPink,#neonRed,#neonGreen{
+  padding-bottom: 10px;
+}
+#np{
+position: relative;
+  margin-left: 12px;
+}
+</style>
+<div id="d">
+  
+  
+<button id="ah" onclick="toggleCheckbox()">AUTO HEADSHOT</button>
+<label for="op">
+  <input type="checkbox" name="" id="op" />
+  <span class="checkbox-style"></span>
+</label>
+
+
+
+<br /
+<button id="aimbot" onclick="toggleCheckbox('ab')">AIMBOT</button>
+<label for="ab">
+  <input type="checkbox" name="" id="ab" />
+  <span class="checkbox-style"></span>
+</label>
+
+<br />
+
+
+
+<button id="neonYellow" onclick="toggleCheckbox('ny')" style="color: #FFFF00; text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00, 0 0 15px #FFFF00;">ESP LINE</button>
+<label for="ny">
+  <input type="checkbox" name="" id="ny" />
+  <span class="checkbox-style"></span>
+</label>
+
+<br />
+<button id="neonPink" onclick="toggleCheckbox('np')" style="color: #FF69B4; text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #FF69B4;">ANTEENA HACK</button>
+<label for="np">
+  <input type="checkbox" name="" id="np" />
+  <span class="checkbox-style"></span>
+</label>
+<br>
+<button id="neonGreen" onclick="toggleCheckbox('ng')" style="color: #16F529; text-shadow: 0 0 5px #16F529, 0 0 10px #16F529, 0 0 15px #16F529;">ACCURACY++</button>
+<label for="ng">
+  <input type="checkbox" name="" id="ng" />
+  <span class="checkbox-style"></span>
+</label>
+
+<br />
+<button id="neonRed" onclick="toggleCheckbox('nr')" style="color: #FF0000; text-shadow: 0 0 5px #FF0000, 0 0 10px #FF0000, 0 0 15px #FF0000;">RECOIL 0</button>
+<label for="nr">
+  <input type="checkbox" name="" id="nr" />
+  <span class="checkbox-style"></span>
+</label>
+
+<br />
+<button id="neonBlue" onclick="toggleCheckbox('nb')" style="color: #0000FF; text-shadow: 0 0 5px #0000FF, 0 0 10px #0000FF, 0 0 15px #0000FF;">100% ANTIBAN </button>
+<label for="nb">
+  <input type="checkbox" name="" id="nb" />
+  <span class="checkbox-style"></span>
+</label>
+
+
+
+</div>
+
+<script>
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', (event) => {
+  const buttonText = event.target.innerText;
+  let p =document.createElement('p')
+  p.style.color = '#00FF00'
+  p.style.fontSize = '10px'
+  const now = new Date();
+  let CD = now.toLocaleTimeString()
+
+p.innerHTML = 'Activating, 60% done ✅ 80% done ✅ 100% completed Activating hack........ ACTIVATED SUCESSFULLY     🔗  $document.object.prototype injected { finding errors....  0 error found 100% done {}</try again.prototype.null.>}}' + 'successful injection done on <span style="color:#ff0000;">' + CD + '</span>  ACTIVATED ⚠️  '  + '<span style="color:#4D4DFF;">' + buttonText + '</span>';
+
+
+
+
+
+  document.body.appendChild(p)
+  
+  
+  
+}));
+
+
+</script>
+</body>
+</html>
